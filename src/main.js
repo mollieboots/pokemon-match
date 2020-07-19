@@ -2,17 +2,16 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import $ from "jquery";
-const Pokedex = require('pokeapi-js-wrapper');
+import { Pokedex } from "./pokemon-match.js";
+// const Pokedex = require('pokeapi-js-wrapper');
+let P = new Pokedex.Pokedex({ protocol: 'https' });
 
-$(document).ready(function() {
-
-});
-
-var P = new Pokedex.Pokedex({protocol: 'https'});
-P.getPokemonByName('eevee') // with Promise
-.then(function(response) {
-  console.log(response);
-})
-.catch(function(err) {
-  console.log(err)
+$(document).ready(function () {
+    P.getPokemonHabitatsList() // with Promise
+    .then(function (response) {
+        $('.list').text(response)
+    })
+    .catch(function (err) {
+        console.log(err)
+    });
 });
