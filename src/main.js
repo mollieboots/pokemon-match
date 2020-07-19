@@ -9,7 +9,8 @@ let P = new Pokedex.Pokedex({ protocol: 'https' });
 $(document).ready(function () {
     P.getPokemonHabitatsList() // with Promise
     .then(function (response) {
-        $('.list').text(response)
+        console.log(response)
+        $('.list').text(response.results[0].name)
     })
     .catch(function (err) {
         console.log(err)

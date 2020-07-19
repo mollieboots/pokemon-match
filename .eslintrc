@@ -12,6 +12,8 @@
         "semi": 1,
         "indent": ["warn", 4],
         "no-console": "warn",
-        "no-debugger": "warn"
+        "no-debugger": "warn",
+        "no-undef": "warn"
+        //not a good idea to leave "no-undef" as a warning forever
     }
 }
