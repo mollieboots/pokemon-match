@@ -5,14 +5,28 @@
     <title>Pokemon Match</title>
 </head>
 
-<body>
     <div class="container">
         <h1>Pokemon Match</h1>
     </div>
     <div class="container">
-        <div class="list">
-
-        </div>
+        <form action="" id="user-pokemon">
+            <div class="form-group">
+                <div class="form-control">
+                    <select name="habitat" id="habitat">
+                    <!-- changed values to the object array number from the api call -->
+                        <option value="cave">Cave</option>
+                        <option value="forest">Forest</option>
+                        <option value="grassland">Grassland</option>
+                        <option value="mountain">Mountain</option>
+                        <option value="rough-terrian">Rough-terrain</option>
+                        <option value="sea">Sea</option>
+                        <option value="urban">Urban</option>
+                        <option value="waters-edge">Waters-edge</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" id="get-data">Who's my Pokemon?</button>
+        </form>
     </div>
 </body>
 

@@ -6,13 +6,21 @@ import { Pokedex } from "./pokemon-match.js";
 // const Pokedex = require('pokeapi-js-wrapper');
 let P = new Pokedex.Pokedex({ protocol: 'https' });
 
+let hpokemon = []
 $(document).ready(function () {
-    P.getPokemonHabitatsList() // with Promise
-    .then(function (response) {
-        console.log(response)
-        $('.list').text(response.results[0].name)
-    })
-    .catch(function (err) {
-        console.log(err)
+    $("#user-pokemon").submit(function (event) {
+        event.preventDefault();
+        let h = $("#habitat").val();
+        P.getPokemonHabitatByName(h)
+            .then(function (response) {
+                hpokemon.push(response.pokemon_species);
+                return hpokemon;    
+            });
+        console.log(hpokemon);
     });
 });
+
+// P.resource(['/api/v2/pokemon/36', 'api/v2/berry/8', 'https://pokeapi.co/api/v2/ability/9/'])
+//     .then(function(response) {
+//       console.log(response); // resource function accepts singles or arrays of URLs/paths
+//     })
