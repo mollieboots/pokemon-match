@@ -1,11 +1,15 @@
 export const Pokedex = require('pokeapi-js-wrapper');
 
+
 let P = new Pokedex.Pokedex({ protocol: 'https' });
 
-P.getPokemonHabitatByName("cave")
-.then(function(response) {
-  console.log(response);
-});
+export function comparePokes(hpokemon, cpokemon) {
+  const result = hpokemon.filter(list2 => list2.forEach(element => hpokemon));
+}
+
+
+
+
 
 // P.getPokemonByName('gastly') // with Promise
 //     .then(function (response) {
